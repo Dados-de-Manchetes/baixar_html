@@ -2,7 +2,7 @@
 resource "aws_instance" "baixar_html" {
 
   ami           = "ami-0f9fc25dd2506cf6d" # Amazon linux 2
-  instance_type = "m6a.large"
+  instance_type = "t3a.small"
   iam_instance_profile = "${aws_iam_instance_profile.baixar_html.id}"
 
   vpc_security_group_ids = [aws_security_group.baixar_html.id]
