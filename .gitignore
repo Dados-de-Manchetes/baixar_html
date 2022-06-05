@@ -131,3 +131,4 @@ infr/tf/.terraform.lock.hcl
 infr/tf/terraform.tfstate.backup
 infr/tf/.terraform/providers/
 infr/tf/terraform.tfstate
+.vscode
