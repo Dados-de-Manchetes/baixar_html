@@ -34,7 +34,7 @@ if __name__ == "__main__":
         logging.info("Ainda não finalizou...")
         time.sleep(5)
 
-    if datetime.now() < tempo_maximo:
+    if datetime.now() > tempo_maximo:
         logging.error("Estouro de tempo de processamento")
     
     logging.info("Processo finalizado")
