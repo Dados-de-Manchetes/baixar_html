@@ -1,7 +1,7 @@
 import json
 import logging
 
-TF_LOCAL = "../infr/tf/terraform.tfstate.backup"
+TF_LOCAL = "../infr/tf/terraform.tfstate"
 
 class cons:
     INSTANCES = "instances"
