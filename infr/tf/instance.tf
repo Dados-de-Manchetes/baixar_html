@@ -41,29 +41,29 @@ resource "aws_security_group" "baixar_html" {
 }
 
 resource "aws_iam_instance_profile" "baixar_html" {
-    name = "${var.projeto_tag}-iam-instance"
+    name = "${var.projeto_tag}-${var.app_baixar_html_nome}-iam-instance"
     role = aws_iam_role.baixar_html.id
 }
 
 resource "aws_iam_role" "baixar_html" {
-    name = "${var.projeto_tag}-iam-role"
+    name = "${var.projeto_tag}-${var.app_baixar_html_nome}-iam-role"
     assume_role_policy = "${file("./files/role/instance.json")}"
 }
 
 resource "aws_iam_role_policy" "s3_code_base" {
-  name = "${var.projeto_tag}-iam-role-policy-s3-code-base"
+  name = "${var.projeto_tag}-${var.app_baixar_html_nome}-iam-role-policy-s3-code-base"
   role = "${aws_iam_role.baixar_html.id}"
   policy = "${file("./files/policy/s3_code_base.json")}"
 }
 
 resource "aws_iam_role_policy" "s3_manchetes_dados" {
-  name = "${var.projeto_tag}-iam-role-policy-s3-manchetes-dados"
+  name = "${var.projeto_tag}-${var.app_baixar_html_nome}-iam-role-policy-s3-manchetes-dados"
   role = "${aws_iam_role.baixar_html.id}"
   policy = "${file("./files/policy/s3_manchetes-dados.json")}"
 }
 
 resource "aws_iam_role_policy" "s3_manchetes-url-data" {
-  name = "${var.projeto_tag}-iam-role-policy-s3-dados-gerais"
+  name = "${var.projeto_tag}-${var.app_baixar_html_nome}-iam-role-policy-s3-dados-gerais"
   role = "${aws_iam_role.baixar_html.id}"
   policy = "${file("./files/policy/s3_manchetes-url-data.json")}"
 }
