@@ -7,7 +7,6 @@ resource "aws_instance" "baixar_html" {
 
   vpc_security_group_ids = [aws_security_group.baixar_html.id]
   subnet_id   = "subnet-06b0fcfe6d317bb93"
-  private_ip = "172.16.10.11"
   associate_public_ip_address = true
 
   user_data = "${file("./files/app_run.sh")}"
